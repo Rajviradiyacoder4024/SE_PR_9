@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    stages {
         stage('install') {
             steps {
                 bat "mvn install -f Inventory_management_system"
