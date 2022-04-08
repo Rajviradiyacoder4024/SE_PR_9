@@ -1,13 +1,5 @@
 pipeline {
     agent any
-    stages {
-        stage('git repo & clean') {
-            steps {
-               
-                bat "git clone https://github.com/Rajviradiyacoder4024/19it152.git"
-                bat "mvn clean -f Inventory_management_system"
-            }
-        }
         stage('install') {
             steps {
                 bat "mvn install -f Inventory_management_system"
@@ -21,6 +13,27 @@ pipeline {
         stage('package') {
             steps {
                 bat "mvn package -f Inventory_management_system"
+            }
+        }
+    }
+}
+
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
             }
         }
     }
